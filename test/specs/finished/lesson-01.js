@@ -3,14 +3,14 @@
  */
 
 
-describe("Chechitas Login Page", async () => {
+describe("Czechitas Login Page", async () => {
     
     it("Should open login page", async () => {
         
         await browser.reloadSession();
         
         await browser.url("/prihlaseni");
-        
+
         await browser.pause(5000);    
     });
 });
@@ -28,6 +28,8 @@ describe("My first try with JS", async () =>{
         await browser.saveScreenshot('login_page.png');
 
         await browser.pause(5000);
-         
-    })
-})
+        
+    });
+});
+
+ 
