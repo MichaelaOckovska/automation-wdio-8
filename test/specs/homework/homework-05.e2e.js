@@ -2,6 +2,8 @@
  * Lesson 5: Assertions
  */
 
+import { username, password, uniqueUsername } from '../fixtures.js';
+
 describe('Chechitas Registration Page', async () => {
 
     before(async () => {
@@ -18,12 +20,14 @@ describe('Chechitas Registration Page', async () => {
         const passwordField = await $('#password');
         const passwordConfirmField = await $('#password-confirm');
         const registrationButton = await $('.btn-primary');
+        const header = await $('h1');
 
-        console.log('Name field is visible: ' + await nameField.waitForDisplayed());
-        console.log('Email field is visible: ' + await emailField.waitForDisplayed());
-        console.log('Password field is visible: ' + await passwordField.waitForDisplayed());
-        console.log('Password confirm field is visible: ' + await passwordConfirmField.waitForDisplayed());
-        console.log('Registration button is clickable: ' + await registrationButton.waitForClickable());
+        await expect(nameField).toBeEnabled();
+        await expect(emailField).toBeEnabled();
+        await expect(passwordField).toBeEnabled();
+        await expect(passwordConfirmField).toBeEnabled();
+        await expect(registrationButton).toBeClickable();
+        await expect(header).toHaveText('Registrace');
 
     });
 
@@ -35,19 +39,15 @@ describe('Chechitas Registration Page', async () => {
         const passwordConfirmField = await $('#password-confirm');
         const registrationButton = await $('.btn-primary');
 
-        await nameField.setValue('Stabilo Boss2');
-        await emailField.setValue('stabilo.boss2@czechitas.cz');
+        await nameField.setValue('Stabilo Boss');
+        await emailField.setValue(uniqueUsername);
         await passwordField.setValue('Stabilo.Boss123');
         await passwordConfirmField.setValue('Stabilo.Boss123');
 
         await registrationButton.click();
 
         const currentUser = $('.navbar-right').$('.dropdown-toggle');
-        await expect(currentUser).toHaveText('Stabilo Boss2');
-
-        await browser.pause(1000);
-
-        await browser.saveScreenshot('succes_registration.png');
+        await expect(currentUser).toExist();
 
     });
 
@@ -68,20 +68,18 @@ describe('Chechitas Registration Page', async () => {
             const passwordConfirmField = await $('#password-confirm');
             const registrationButton = await $('.btn-primary');
 
-            await nameField.setValue('Stabilo Boss2');
-            await emailField.setValue('stabilo.boss2@czechitas.cz');
+            await nameField.setValue('Stabilo Boss');
+            await emailField.setValue('stabilo.boss@czechitas.cz');
             await passwordField.setValue('Stabilo.Boss123');
             await passwordConfirmField.setValue('Stabilo.Boss123');
 
             await registrationButton.click();
 
             const toastMessage = $('.toast-message');
-            console.log(await toastMessage.waitForDisplayed());
-            console.log(await toastMessage.getText());
+            await expect(toastMessage).toHaveText('Některé pole obsahuje špatně zadanou hodnotu');
 
             const invalidFeedback = $('.invalid-feedback');
-            console.log(await invalidFeedback.waitForDisplayed());
-            console.log(await invalidFeedback.getText());
+            await expect(invalidFeedback).toHaveText('Účet s tímto emailem již existuje');
 
         });
 
@@ -101,12 +99,10 @@ describe('Chechitas Registration Page', async () => {
             await registrationButton.click();
 
             const toastMessage = $('.toast-message');
-            console.log(await toastMessage.waitForDisplayed());
-            console.log(await toastMessage.getText());
+            await expect(toastMessage).toHaveText('Některé pole obsahuje špatně zadanou hodnotu');
 
             const invalidFeedback = $('.invalid-feedback');
-            console.log(await invalidFeedback.waitForDisplayed());
-            console.log(await invalidFeedback.getText());
+            await expect(invalidFeedback).toHaveText('Heslo musí obsahovat minimálně 6 znaků, velké i malé písmeno a číslici');
 
         });
 

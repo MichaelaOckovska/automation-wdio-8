@@ -3,24 +3,24 @@
  */
 
 
-xdescribe("Czechitas Login Page", async () => {
+xdescribe('Czechitas Login Page', async () => {
     
-    it("Should open login page", async () => {
+    it('Should open login page', async () => {
         
         await browser.reloadSession();
         
-        await browser.url("/prihlaseni");
+        await browser.url('/prihlaseni');
 
         await browser.pause(5000);    
     });
 });
 
 
-xdescribe("My first try with JS", async () =>{
+xdescribe('My first try with JS', async () =>{
 
-    it("Working out the task", async () => {
+    it('Working out the task', async () => {
         
-        await browser.url("/prihlaseni");
+        await browser.url('/prihlaseni');
 
         const windowSize = await browser.getWindowSize ();
             console.log(windowSize);
