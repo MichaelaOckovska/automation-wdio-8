@@ -106,6 +106,23 @@ xdescribe('Learn how to organize your tests', async () => {
 
         })
 
+        it('Should show login form', async () => {
+
+            const emailField = await $('#email');
+            const passwordField = await $('#password');
+            const loginButton = await $('.btn-primary');
+
+            console.log('Email field is displayed: ' + await emailField.isDisplayed());
+            console.log('Email field is enabled: ' + await emailField.isEnabled());
+
+            console.log('Password field is displayed: ' + await passwordField.isDisplayed());
+            console.log('Password field is enabled: ' + await passwordField.isEnabled());
+
+            console.log('Login button is displayed: ' + await loginButton.isDisplayed());
+            console.log('Login button text is ' + await loginButton.getText());
+
+        });
+
         describe('Tests for failed login', async () => {
 
             it('Should fail at login without email or password', async () => {
@@ -122,7 +139,7 @@ xdescribe('Learn how to organize your tests', async () => {
             });
 
 
-            it('Should fail at login with invalid credentials', async () => {
+            it('Should fail at login with invalid password', async () => {
 
                 const emailField = $('#email');
                 const passwordField = $('#password');
@@ -138,7 +155,7 @@ xdescribe('Learn how to organize your tests', async () => {
 
                 const invalidFeedback = $('.invalid-feedback');
                 console.log(await invalidFeedback.waitForDisplayed());
-                console.log('User is logged in: ' + await invalidFeedback.getText());
+                console.log('User is not logged in: ' + await invalidFeedback.getText());
 
                 await browser.saveScreenshot('failed_login.png');
 
