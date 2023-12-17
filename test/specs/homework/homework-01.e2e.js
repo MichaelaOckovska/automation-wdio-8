@@ -2,7 +2,7 @@
  * Lesson 1: First running code
  */
 
- xdescribe('Homework', async () => {
+ describe('Homework', async () => {
 
      it('Should open page and create screenshot', async () => {
 
