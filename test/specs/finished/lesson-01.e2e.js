@@ -3,7 +3,7 @@
  */
 
 
-describe("Czechitas Login Page", async () => {
+xdescribe("Czechitas Login Page", async () => {
     
     it("Should open login page", async () => {
         
@@ -16,7 +16,7 @@ describe("Czechitas Login Page", async () => {
 });
 
 
-describe("My first try with JS", async () =>{
+xdescribe("My first try with JS", async () =>{
 
     it("Working out the task", async () => {
         

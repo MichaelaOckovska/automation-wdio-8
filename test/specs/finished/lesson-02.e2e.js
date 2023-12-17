@@ -2,7 +2,6 @@
  * Lesson 2: async / await
  */
 
-
 // Vysvetlenie funkcií
 
 function greetAndAsk(name, role) {
@@ -18,7 +17,7 @@ console.log(value);
 / * Lesson 2: Selectors
 */
 
-describe("Czechitas Login Page", async () => {
+xdescribe("Czechitas Login Page", async () => {
     
     it("Should find selectors for login page", async () => {
         

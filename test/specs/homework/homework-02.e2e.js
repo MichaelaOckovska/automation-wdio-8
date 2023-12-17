@@ -33,7 +33,7 @@ describe("Chechitas Registration Page", async () => {
 // Tlačítko na registraci
 
         const registrationButton = await $(".btn-primary");
-            console.log(await passwordField.getHTML());
+            console.log(await registrationButton.getHTML());
 
         await browser.pause(5000);    
     });

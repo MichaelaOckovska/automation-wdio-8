@@ -2,18 +2,18 @@
  * Lesson 1: First running code
  */
 
-//  describe('Homework', async () => {
+ xdescribe('Homework', async () => {
 
-//      it('should open page and create screenshot', async () => {
+     it('Should open page and create screenshot', async () => {
 
-//          await browser.url("/registrace");
+         await browser.url("/registrace");
 
-//          await browser.saveScreenshot('login_page.png');
+         await browser.saveScreenshot('login_page.png');
     
-//          await browser.pause(5000);
+         await browser.pause(5000);
 
-//      });
+     });
 
-//  });
+ });
 
 
