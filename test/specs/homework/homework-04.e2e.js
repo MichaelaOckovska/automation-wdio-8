@@ -2,7 +2,7 @@
  * Lesson 4: Test structure
  */
 
-xdescribe('Chechitas Registration Page', async () => {
+describe('Chechitas Registration Page', async () => {
 
     before(async () => {
 
