@@ -4,7 +4,7 @@
 
 import {username, password} from '../fixtures.js';
 
-xdescribe('Czechitas Applications Page', async () => {
+describe('Czechitas Applications Page', async () => {
 
     beforeEach(async () => {
 

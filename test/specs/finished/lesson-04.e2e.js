@@ -4,7 +4,7 @@
 
 import { username, password } from '../fixtures.js';
 
-xdescribe('Learn how to organize your tests', async () => {
+describe('Learn how to organize your tests', async () => {
 
     xit('Long and ugly tests script', async () => {
 

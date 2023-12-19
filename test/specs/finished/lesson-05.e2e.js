@@ -4,7 +4,7 @@
 
 import { username, password } from '../fixtures.js';
 
-xdescribe('Learn how to use Assertations', async () => {
+describe('Learn how to use Assertations', async () => {
 
     describe('Login and Logout', async () => {
 

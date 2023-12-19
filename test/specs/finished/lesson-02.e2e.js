@@ -17,7 +17,7 @@ console.log(value);
 / * Lesson 2: Selectors
 */
 
-xdescribe('Czechitas Login Page', async () => {
+describe('Czechitas Login Page', async () => {
 
     it('Should find selectors for login page', async () => {
 
