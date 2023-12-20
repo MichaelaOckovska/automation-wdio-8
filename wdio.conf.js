@@ -111,9 +111,14 @@ export const config = {
 
     onPrepare: (config, capabilities) => {
 
-        deleteFiles("screenshots");
+        deleteFiles('screenshots');
 
         // Remove previous tmp files
+
+        // fs.rm(allureTmpDirectory, { recursive: true }, err => {
+        //     if (err) console.log(err);
+        // });
+
         fs.rmdir(allureTmpDirectory, { recursive: true }, err => {
             if (err) console.log(err);
         });

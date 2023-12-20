@@ -41,6 +41,7 @@ describe('Chechitas Registration Page', async () => {
 
         await nameField.setValue('Stabilo Boss');
         await emailField.setValue('stabilo.boss@czechitas.cz');
+        // await emailField.setValue(uniqueUsername);
         await passwordField.setValue('Stabilo.Boss123');
         await passwordConfirmField.setValue('Stabilo.Boss123');
 

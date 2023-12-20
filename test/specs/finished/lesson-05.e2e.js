@@ -149,9 +149,7 @@ describe('Learn how to use Assertations', async () => {
         it('Should display the application table', async () => {
 
             await $('#DataTables_Table_0_processing').waitForDisplayed();
-            await $('#DataTables_Table_0_processing').waitForDisplayed({
-                reverse: true
-            });
+            await $('#DataTables_Table_0_processing').waitForDisplayed({ reverse: true });
 
             const rows = await $('.dataTable').$('tbody').$$('tr'); // Očividne to musí byť až po tom okne napísané v kóde.
 
