@@ -49,7 +49,7 @@ describe('Chechitas Registration Page', async () => {
 
     });
 
-    it('Should display the registration page', async () => {
+    it('should display the registration page', async () => {
 
         await expect(nameField()).toBeEnabled();
         await expect(emailField()).toBeEnabled();
@@ -60,7 +60,7 @@ describe('Chechitas Registration Page', async () => {
 
     });
 
-    it('Should register new user', async () => {
+    it('should register new user', async () => {
 
         await registration(registrationName, password, uniqueUsername);
 
@@ -77,7 +77,7 @@ describe('Chechitas Registration Page', async () => {
 
         });
 
-        it('Should fail, because of email is already registered and invalid password', async () => {
+        it('should fail, because of email is already registered and invalid password', async () => {
 
             await registration(registrationName, '123456', 'stabilo.boss@czechitas.cz');
 
@@ -86,7 +86,7 @@ describe('Chechitas Registration Page', async () => {
 
         });
 
-        it('Should fail, because email is already registered', async () => {
+        it('should fail, because email is already registered', async () => {
 
             await registration(registrationName, password, 'stabilo.boss@czechitas.cz');
 
@@ -95,7 +95,7 @@ describe('Chechitas Registration Page', async () => {
 
         });
 
-        it('Should fail, because of invalid password', async () => {
+        it('should fail, because of invalid password', async () => {
 
             await registration(registrationName, '123456', uniqueUsername2);
 

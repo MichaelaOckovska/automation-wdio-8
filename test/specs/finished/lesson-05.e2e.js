@@ -15,7 +15,7 @@ describe('Learn how to use Assertations', async () => {
 
         });
 
-        it('Should show login form', async () => {
+        it('should show login form', async () => {
 
             const emailField = await $('#email');
             const passwordField = await $('#password');
@@ -48,7 +48,7 @@ describe('Learn how to use Assertations', async () => {
 
         describe('Tests for failed login', async () => {
 
-            it('Should fail at login without email or password', async () => {
+            it('should fail at login without email or password', async () => {
 
                 const emailField = $('#email');
                 const passwordField = $('#password');
@@ -63,7 +63,7 @@ describe('Learn how to use Assertations', async () => {
             });
 
 
-            it('Should fail at login with invalid password', async () => {
+            it('should fail at login with invalid password', async () => {
 
                 const emailField = $('#email');
                 const passwordField = $('#password');
@@ -83,7 +83,7 @@ describe('Learn how to use Assertations', async () => {
 
         });
 
-        it('Should succes in login with valid credentials', async () => {
+        it('should login with valid credentials', async () => {
 
             const emailField = $('#email');
             const passwordField = $('#password');
@@ -99,7 +99,7 @@ describe('Learn how to use Assertations', async () => {
 
         });
 
-        it('Should logout user', async () => {
+        it('should logout user', async () => {
 
             const emailField = $('#email');
             const passwordField = $('#password');
@@ -146,7 +146,7 @@ describe('Learn how to use Assertations', async () => {
 
         })
 
-        it('Should display the application table', async () => {
+        it('should display the application table', async () => {
 
             await $('#DataTables_Table_0_processing').waitForDisplayed();
             await $('#DataTables_Table_0_processing').waitForDisplayed({ reverse: true });
@@ -182,7 +182,7 @@ describe('Learn how to use Assertations', async () => {
 
         });
 
-        it('Should filtering in the application table', async () => {
+        it('should filtering in the application table', async () => {
 
             await $('input[type=search]').setValue('Bubla');
             await $('#DataTables_Table_0_processing').waitForDisplayed();

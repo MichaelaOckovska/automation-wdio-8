@@ -2,37 +2,37 @@
  * Lesson 3: Selectors and element interactions
  */
 
-describe("Chechitas Registration Page", async () => {
-    
-    it("Should register new user", async () => {
-        
-        await browser.reloadSession();
-        await browser.url("/registrace");
+describe('Chechitas Registration Page', async () => {
 
-// Vyplní jméno a příjmení
+        it('should register new user', async () => {
 
-        const nameField = await $("#name");
-        await nameField.setValue("Stabilo Boss");
+                await browser.reloadSession();
+                await browser.url('/registrace');
 
-// Vyplní email
+                // Vyplní jméno a příjmení
 
-        const emailField = await $("#email");
-        await emailField.setValue("stabilo.boss@czechitas.cz");
+                const nameField = await $('#name');
+                await nameField.setValue('Stabilo Boss');
 
-// Vyplní a potvrdí heslo
+                // Vyplní email
 
-        const passwordField = await $("#password");
-        await passwordField.setValue("Stabilo.Boss123");
+                const emailField = await $('#email');
+                await emailField.setValue('stabilo.boss@czechitas.cz');
 
-        const passwordConfirmField = await $("#password-confirm");
-        await passwordConfirmField.setValue("Stabilo.Boss123");
+                // Vyplní a potvrdí heslo
 
-// Tlačítko na registraci
+                const passwordField = await $('#password');
+                await passwordField.setValue('Stabilo.Boss123');
 
-        const registrationButton = await $(".btn-primary");
-        await registrationButton.click();
+                const passwordConfirmField = await $('#password-confirm');
+                await passwordConfirmField.setValue('Stabilo.Boss123');
 
-        console.log("V ďalšom kroku vyskúšame, či registrácia prebehla úspešne.")
-   
-    });
+                // Tlačítko na registraci
+
+                const registrationButton = await $('.btn-primary');
+                await registrationButton.click();
+
+                console.log('V ďalšom kroku vyskúšame, či registrácia prebehla úspešne.')
+
+        });
 });

@@ -4,6 +4,11 @@
 
 import { username, password } from '../fixtures.js';
 
+async function openLoginPage() {
+    await browser.reloadSession();
+    await browser.url('/prihlaseni');
+}
+
 function emailField() {
     return $('#email');
 }
@@ -44,18 +49,17 @@ async function login(username, password) {
 
 }
 
-describe('Learn how to organize code', async () => {
+describe('Learn how to organize tests for login page', async () => {
 
     describe('Login and Logout', async () => {
 
         beforeEach(async () => {
 
-            await browser.reloadSession();
-            await browser.url('/prihlaseni');
+            await openLoginPage();
 
         });
 
-        it('Should show login form', async () => {
+        it('should show login form', async () => {
 
             await expect(emailField()).toBeDisplayed();
             await expect(emailField()).toBeEnabled();
@@ -72,7 +76,7 @@ describe('Learn how to organize code', async () => {
 
         describe('Tests for failed login', async () => {
 
-            it('Should fail at login without email or password', async () => {
+            it('should fail at login without email or password', async () => {
 
                 await loginButton().click();
 
@@ -83,7 +87,7 @@ describe('Learn how to organize code', async () => {
             });
 
 
-            it('Should fail at login with invalid password', async () => {
+            it('should fail at login with invalid password', async () => {
 
                 await login(username, 'invalid password');
 
@@ -94,7 +98,7 @@ describe('Learn how to organize code', async () => {
 
         });
 
-        it('Should succes in login with valid credentials', async () => {
+        it('should login with valid credentials', async () => {
 
             await login(username, password);
 
@@ -102,7 +106,7 @@ describe('Learn how to organize code', async () => {
 
         });
 
-        it('Should logout user', async () => {
+        it('should logout user', async () => {
 
             await login(username, password);
             await currentUser().click();

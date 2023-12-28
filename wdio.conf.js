@@ -33,7 +33,6 @@ export const config = {
     ],
     exclude: [
         // './test/specs/examples/**/*.js'
-        './test/specs/finished/**/*.e2e.js',
     ],
     suites: {
         exercise: ['./test/specs/exercise.e2e.js'],
@@ -48,6 +47,7 @@ export const config = {
         lesson_09: ['./test/specs/examples/lesson-09/**/*.e2e.js'],
         lesson_10: ['./test/specs/examples/lesson-10/**/*.e2e.js'],
         lesson_11: ['./test/specs/examples/lesson-11/**/*.e2e.js'],
+        finished: ['./test/specs/finished/**/*.e2e.js'],
         unfinished: ['./test/specs/unfinished/**/*.e2e.js'],
         order: ['./test/specs/order.e2e.js'],
 

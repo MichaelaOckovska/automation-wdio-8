@@ -31,3 +31,4 @@ class LoginPage extends AppPage {
 
 // NEW INSTANCE !!!
 export default new LoginPage();
+ 

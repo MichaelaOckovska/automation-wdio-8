@@ -106,7 +106,7 @@ describe('Learn how to organize your tests', async () => {
 
         })
 
-        it('Should show login form', async () => {
+        it('should show login form', async () => {
 
             const emailField = await $('#email');
             const passwordField = await $('#password');
@@ -125,7 +125,7 @@ describe('Learn how to organize your tests', async () => {
 
         describe('Tests for failed login', async () => {
 
-            it('Should fail at login without email or password', async () => {
+            it('should fail at login without email or password', async () => {
 
                 const emailField = $('#email');
                 const passwordField = $('#password');
@@ -139,7 +139,7 @@ describe('Learn how to organize your tests', async () => {
             });
 
 
-            it('Should fail at login with invalid password', async () => {
+            it('should fail at login with invalid password', async () => {
 
                 const emailField = $('#email');
                 const passwordField = $('#password');
@@ -163,7 +163,7 @@ describe('Learn how to organize your tests', async () => {
 
         });
 
-        it('Should succes in login with valid credentials', async () => {
+        it('should login with valid credentials', async () => {
 
             const emailField = $('#email');
             const passwordField = $('#password');
@@ -179,7 +179,7 @@ describe('Learn how to organize your tests', async () => {
 
         });
 
-        it('Should logout user', async () => {
+        it('should logout user', async () => {
 
             const emailField = $('#email');
             const passwordField = $('#password');
@@ -213,13 +213,13 @@ describe('Learn how to organize your tests', async () => {
 
         })
 
-        it('Should display the application table', async () => {
+        it('should display the application table', async () => {
 
             const emailField = $('#email');
             const passwordField = $('#password');
             const loginButton = $('.btn-primary');
             const applicationsButton = $('=Přihlášky');
-            
+
 
             await emailField.setValue(username);
             await passwordField.setValue(password);
@@ -241,7 +241,7 @@ describe('Learn how to organize your tests', async () => {
 
         });
 
-        it('Should filtering in the application table', async () => {
+        it('should filtering in the application table', async () => {
 
             const emailField = $('#email');
             const passwordField = $('#password');

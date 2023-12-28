@@ -2,39 +2,39 @@
 / * Lesson 2: Selectors
 */
 
-describe("Chechitas Registration Page", async () => {
-    
-    it("Should find selectors for registration page", async () => {
-        
+describe('Chechitas Registration Page', async () => {
+
+    it('should find selectors for registration page', async () => {
+
         await browser.reloadSession();
-        
-        await browser.url("/registrace");
 
-// Políčko pro jméno a příjmení
+        await browser.url('/registrace');
 
-        const nameField = await $("#name");
-            console.log(await nameField.getHTML());
+        // Políčko pro jméno a příjmení
 
-// Políčko pro email
+        const nameField = await $('#name');
+        console.log(await nameField.getHTML());
 
-        const emailField = await $("#email");
-            console.log(await emailField.getHTML());
+        // Políčko pro email
 
-// Políčko pro zadání hesla
+        const emailField = await $('#email');
+        console.log(await emailField.getHTML());
 
-        const passwordField = await $("#password");
-            console.log(await passwordField.getHTML());
+        // Políčko pro zadání hesla
 
-// Políčko pro kontrolu zadaného hesla
+        const passwordField = await $('#password');
+        console.log(await passwordField.getHTML());
 
-        const passwordConfirmField = await $("#password-confirm");
-            console.log(await passwordConfirmField.getHTML());
+        // Políčko pro kontrolu zadaného hesla
 
-// Tlačítko na registraci
+        const passwordConfirmField = await $('#password-confirm');
+        console.log(await passwordConfirmField.getHTML());
 
-        const registrationButton = await $(".btn-primary");
-            console.log(await registrationButton.getHTML());
+        // Tlačítko na registraci
 
-        await browser.pause(5000);    
+        const registrationButton = await $('.btn-primary');
+        console.log(await registrationButton.getHTML());
+
+        await browser.pause(5000);
     });
 });

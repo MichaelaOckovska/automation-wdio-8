@@ -19,7 +19,7 @@ console.log(value);
 
 describe('Czechitas Login Page', async () => {
 
-    it('Should find selectors for login page', async () => {
+    it('should find selectors for login page', async () => {
 
         await browser.reloadSession();
 

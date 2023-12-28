@@ -11,7 +11,7 @@ describe('Chechitas Registration Page', async () => {
 
     });
 
-    it('Should display the registration page', async () => {
+    it('should display the registration page', async () => {
 
         const nameField = await $('#name');
         const emailField = await $('#email');
@@ -27,7 +27,7 @@ describe('Chechitas Registration Page', async () => {
 
     });
 
-    it('Should register new user', async () => {
+    it('should register new user', async () => {
 
         const nameField = await $('#name');
         const emailField = await $('#email');
@@ -60,7 +60,7 @@ describe('Chechitas Registration Page', async () => {
 
         });
 
-        it('Should fail, because email is already registered', async () => {
+        it('should fail, because email is already registered', async () => {
 
             const nameField = await $('#name');
             const emailField = await $('#email');
@@ -85,7 +85,7 @@ describe('Chechitas Registration Page', async () => {
 
         });
 
-        it('Should fail, because of invalid password', async () => {
+        it('should fail, because of invalid password', async () => {
 
             const nameField = await $('#name');
             const emailField = await $('#email');

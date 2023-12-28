@@ -1,29 +1,38 @@
 class Course {
 
-    constructor(name, teacher, date) {
+    constructor(name, teacher, students) {
         this._name = name;
         this._teacher = teacher;
-        this._students = [];
+        this._students = students;
     }
 
-    get name() {
+    get name() {    // Modernejší zápis getterov a setterov
         return this._name;
     }
 
-    set name(value) {
-        this._name = value;
-    }
-
-    get teacher() {
+    getTeacher() {     
         return this._teacher;
+        
     }
 
-    get students() {
+    getStudents() {
         return this._students;
+        
     }
 
-    addStudent(studentName) {
-        this._students.push(studentName);
+    setTeacher(teacher) {
+        this._teacher = teacher;
+    }
+
+
+    addStudent(student) {
+        this._students.push(student);   // Ak chcem pridávať do poľa používam funkciu "push"
+    }
+
+    greetStudents(greeting) {
+        for (const student of this._students) {
+            console.log(`${greeting} ${student}`);
+        }
     }
 }
 
@@ -47,14 +56,29 @@ class AutomationCourse extends Course {
     }
  }
 
-const automation = new Course('Automatizace v testování: Webdriver.io', 'Monika', '2023-06-07');
-console.log(automation);
 
-const javaScript = new Course('JavaScript', 'Honza', '2023-06-07');
-console.log(javaScript);
+ // Toto sú instance triedy, ak má konstruktor parametr => musím mu dať hodnotu
 
-const testovani = new Course('Testovani', 'Honza', '2023-06-07');
-console.log(testovani);
+ const testAutomation = new Course('Automatizácia', 'Monika', ['Jana', 'Petra', 'Katka']);
+ const javaScript = new Course ('JavaScript', 'Honza', ['Jana', 'Petra', 'Katka']);
+ 
+ console.log(testAutomation);
+ console.log(javaScript);
+ 
+ console.log(testAutomation.getTeacher());
+ testAutomation.setTeacher('Lenka');
+ console.log(testAutomation.getTeacher());
+ 
+ console.log(testAutomation.getStudents());
+ testAutomation.addStudent('Milada');
+ console.log(testAutomation.getStudents());
+ 
+ testAutomation.greetStudents('Hello');
+ javaScript.greetStudents('Welcome');
+ 
+ console.log(testAutomation.getTeacher());   // Volanie getterov a setterov, starší ako funkciu
+ console.log(testAutomation.name);           // Novší ako atribút
+ 
 
 const automationCourse = new AutomationCourse('2023-06-07', '2023-06-07');
 console.log(automationCourse);
