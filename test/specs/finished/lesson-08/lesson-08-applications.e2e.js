@@ -2,9 +2,9 @@
  * Lesson 8: Page Object Pattern
  */
 
-import { username, password } from '../fixtures.js';
-import LoginPage from '../../pageobjects/login.page.js';
-import ApplicationsPage from '../../pageobjects/applications.page.js';
+import { username, password } from '../../fixtures.js';
+import LoginPage from './my-pageobjects/08-login.page.js';
+import ApplicationsPage from './my-pageobjects/08-applications.page.js';
 
 
 describe('Learn how to organize tests for application table', async () => {
@@ -42,7 +42,7 @@ describe('Learn how to organize tests for application table', async () => {
 
     });
 
-    it.only('should filtering in the application table', async () => {
+    it('should filtering in the application table', async () => {
 
         await ApplicationsPage.waitForTableToLoad();
         await ApplicationsPage.setSearchInTable('Bubla');

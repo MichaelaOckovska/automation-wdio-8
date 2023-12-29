@@ -228,10 +228,9 @@ describe('Learn how to organize your tests', async () => {
             console.log(await applicationsButton.getAttribute('href'));
             await applicationsButton.click();
 
-            await $('#DataTables_Table_0_processing').waitForDisplayed();
-            await $('#DataTables_Table_0_processing').waitForDisplayed({
-                reverse: true
-            });
+            // await $('#DataTables_Table_0_processing').waitForDisplayed();    // Toto je spráne riešienie, ale na tejto stránke väčšinou to nefunguje, ani Monči
+            await browser.pause(1000);
+            await $('#DataTables_Table_0_processing').waitForDisplayed({ reverse: true });
 
             const rows = await $('.dataTable').$('tbody').$$('tr'); // Očividne to musí byť až po tom okne napísané v kóde.
 
@@ -256,8 +255,8 @@ describe('Learn how to organize your tests', async () => {
             await applicationsButton.click();
 
             await $('input[type=search]').setValue('Bubla');
-            await $('#DataTables_Table_0_processing').waitForDisplayed();
-            // await browser.pause(1000);   // Aj Monči to robilo problém, toto je náhradné riešenie 
+            // await $('#DataTables_Table_0_processing').waitForDisplayed();    // Toto je spráne riešienie, ale na tejto stránke väčšinou to nefunguje, ani Monči
+            await browser.pause(1000);
             await $('#DataTables_Table_0_processing').waitForDisplayed({ reverse: true });
 
             const filteredRows = await $('.dataTable').$('tbody').$$('tr')

@@ -2,8 +2,8 @@
  * Lesson 8: Page Object Pattern
  */
 
-import { username, password } from '../fixtures.js';
-import LoginPage from '../../pageobjects/login.page.js';
+import { username, password } from '../../fixtures.js';
+import LoginPage from './my-pageobjects/08-login.page.js';
 
 
 describe('Learn how to organize tests for login page', async () => {

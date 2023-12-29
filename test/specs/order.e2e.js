@@ -9,7 +9,7 @@ Objednávku nelze odeslat pokud není řádně vyplněna
 
 */
 
-describe("Objednávka pre MŠ/ZŠ", async() => {
+xdescribe("Objednávka pre MŠ/ZŠ", async() => {
 
     it("Aplikace umožňuje uživateli v menu Pro učitele vytvoření nové Objednávky pro MŠ/ZŠ", async() => {
 

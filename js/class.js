@@ -36,27 +36,6 @@ class Course {
     }
 }
 
-
-class AutomationCourse extends Course {
-
-    constructor(start, end) {
-        super('Automatizece WDIO', 'Monika');
-        this.start = start
-        this.end = end
-    }
-
-    get runDays() {
-        const diff = Math.abs(Date.now() - startDate)
-        return Math.ceil(diff / (1000 * 60 * 60 * 24));
-    }
-
-    get remainingDays() {
-        const diff = Math.abs(endDate - Date.now())
-        return Math.ceil( diff/ (1000 * 60 * 60 * 24));
-    }
- }
-
-
  // Toto sú instance triedy, ak má konstruktor parametr => musím mu dať hodnotu
 
  const testAutomation = new Course('Automatizácia', 'Monika', ['Jana', 'Petra', 'Katka']);
@@ -78,7 +57,29 @@ class AutomationCourse extends Course {
  
  console.log(testAutomation.getTeacher());   // Volanie getterov a setterov, starší ako funkciu
  console.log(testAutomation.name);           // Novší ako atribút
- 
 
-const automationCourse = new AutomationCourse('2023-06-07', '2023-06-07');
-console.log(automationCourse);
+
+class AutomationCourse extends Course {
+
+    constructor(startDate, endDate) {
+        super('Automatizece WDIO', 'Monika', ['Jana', 'Petra', 'Katka']);   // Volá konstruktor (parametre) triedy, z ktorej dedím. Dôležité ak máme nový konstruktor.
+        this._start = startDate
+        this._end = endDate
+    }
+
+    get runDays() {
+        const diff = Math.abs(Date.now() - this.startDate);
+        return Math.ceil(diff / (1000 * 60 * 60 * 24));
+    }
+
+    get remainingDays() {
+        const diff = Math.abs(this.endDate - Date.now());
+        return Math.ceil( diff/ (1000 * 60 * 60 * 24));
+    }
+ }
+
+
+const automationCourse = new AutomationCourse('2023-10-04', '2024-01-20');
+console.log(automationCourse.runDays);
+console.log(automationCourse.remainingDays);
+
