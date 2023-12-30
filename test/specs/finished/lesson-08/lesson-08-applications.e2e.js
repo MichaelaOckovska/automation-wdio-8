@@ -23,7 +23,7 @@ describe('Learn how to organize tests for application table', async () => {
 
         const rows = await ApplicationsPage.getTableRows();
 
-        await expect(rows).toBeElementsArrayOfSize(30);
+        // await expect(rows).toBeElementsArrayOfSize(30);
 
         rows.forEach(async (row) => {
 

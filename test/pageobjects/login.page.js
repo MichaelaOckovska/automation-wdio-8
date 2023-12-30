@@ -9,8 +9,8 @@ class LoginPage extends AppPage {
     get emailField() { return $('#email'); }
     get passwordField() { return $('#password'); }
     get loginButton() { return $('.btn-primary'); }
-    get toastMessage() { return $('.toast-message'); }
-    get invalidFeedback() { return $('.invalid-feedback'); }
+    get passwordResetLink() { return $('.btn-link'); }
+    
 
     async open() {
         await browser.reloadSession();

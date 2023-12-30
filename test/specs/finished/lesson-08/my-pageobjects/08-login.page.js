@@ -13,8 +13,8 @@ class LoginPage {
     get passwordResetLink() { return $('.btn-link'); }
     get toastMessage() { return $('.toast-message'); }
     get invalidFeedback() { return $('.invalid-feedback'); }
-    get rightNavbar() { return $('.navbar-right') }
-    get currentUser() { return this.rightNavbar.$('.dropdown-toggle'); } // Môžem volať funkciu vo funkcii
+    get navbarRight() { return $('.navbar-right') }
+    get currentUser() { return this.navbarRight.$('.dropdown-toggle'); } // Môžem volať funkciu vo funkcii
     get logoutButton() { return $('#logout-link'); }
 
     async open() {

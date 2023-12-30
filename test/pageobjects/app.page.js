@@ -7,17 +7,14 @@ class AppPage {
     }
 
     get navbarRight() { return $('.navbar-right'); }
-    get userNameDropdown() { return this.navbarRight.$('[data-toggle="dropdown"]'); }
-    get logoutLink() { return $('#logout-link'); }
-    
+    get currentUser() { return this.navbarRight.$('.dropdown-toggle'); }
+    get logoutButton() { return $('#logout-link'); }
+    get toastMessage() { return $('.toast-message'); }      // Dá sa predpokladať, že toast bude bežný pre celú aplikáciu
+    get invalidFeedback() { return $('.invalid-feedback'); }
+
     async open() {
         await browser.open(this._url);
     }
-
-    async getCurrentUser() {
-        return await this.userNameDropdown.getText();
-    }
-
 
 }
 

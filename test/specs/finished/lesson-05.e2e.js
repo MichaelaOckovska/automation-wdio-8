@@ -185,7 +185,7 @@ describe('Learn how to use Assertations', async () => {
 
         it('should filtering in the application table', async () => {
 
-            await $('input[type=search]').setValue('Bubla');
+            await $('input[type=search]').setValue('Bill');
             // await $('#DataTables_Table_0_processing').waitForDisplayed();    // Toto je spráne riešienie, ale na tejto stránke väčšinou to nefunguje, ani Monči
             await browser.pause(1000);
             await $('#DataTables_Table_0_processing').waitForDisplayed({ reverse: true });
@@ -201,7 +201,7 @@ describe('Learn how to use Assertations', async () => {
                 const tablePayment = await columns[2];
                 const tableToPay = await columns[3];
 
-                await expect(tableName).toHaveTextContaining(/Bubla/);
+                await expect(tableName).toHaveTextContaining(/Bill/);
                 await expect(tableDate).toHaveText(/\d{1,2}\.\d{1,2}\.\d{4}/);
                 await expect(tablePayment).toHaveText(/(Bankovní převod|Hotově|FKSP)/);
                 await expect(tableToPay).toHaveText(/\d{1,3}(| \d{0,3}) Kč/g);
