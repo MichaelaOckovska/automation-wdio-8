@@ -2,6 +2,8 @@
  * Lesson 4: Test structure
  */
 
+import { username, password, uniqueUsername } from '../fixtures.js';
+
 describe('Chechitas Registration Page', async () => {
 
     before(async () => {
@@ -37,6 +39,7 @@ describe('Chechitas Registration Page', async () => {
 
         await nameField.setValue('Stabilo Boss2');
         await emailField.setValue('stabilo.boss2@czechitas.cz');
+        // await emailField.setValue(uniqueUsername);
         await passwordField.setValue('Stabilo.Boss123');
         await passwordConfirmField.setValue('Stabilo.Boss123');
 

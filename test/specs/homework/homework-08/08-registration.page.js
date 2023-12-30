@@ -1,19 +1,17 @@
-import AppPage from "./app.page.js";
-
-
-class RegistrationPage extends AppPage {
+class RegistrationPage {
 
     constructor() {
-        super('/registrace');
+        this._url = '/registrace';
     }
     get nameField() { return $('#name'); }
     get emailField() { return $('#email'); }
     get passwordField() { return $('#password'); }
     get passwordConfirmField() { return $('#password-confirm'); }
     get registrationButton() { return $('.btn-primary'); }
-    // get currentUser() { return $('.navbar-right').$('.dropdown-toggle'); }
-    // get toastMessage() { return $('.toast-message'); }
-    // get invalidFeedback() { return $('.invalid-feedback'); }
+    get header() { return $('h1'); }
+    get currentUser() { return $('.navbar-right').$('.dropdown-toggle'); }
+    get toastMessage() { return $('.toast-message'); }
+    get invalidFeedback() { return $('.invalid-feedback'); }
 
     async open() {
         await browser.reloadSession();

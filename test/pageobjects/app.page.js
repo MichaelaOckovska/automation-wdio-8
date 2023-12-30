@@ -11,6 +11,7 @@ class AppPage {
     get logoutButton() { return $('#logout-link'); }
     get toastMessage() { return $('.toast-message'); }      // Dá sa predpokladať, že toast bude bežný pre celú aplikáciu
     get invalidFeedback() { return $('.invalid-feedback'); }
+    get header() { return $('h1'); }
 
     async open() {
         await browser.open(this._url);

@@ -2,8 +2,8 @@
  * Lesson 8: Page Object Pattern
  */
 
-import { username, password, registrationName, uniqueUsername, uniqueUsername2 } from '../fixtures.js';
-import RegistrationPage from '../../pageobjects/registration.page.js';
+import { username, password, registrationName, uniqueUsername, uniqueUsername2 } from '../../fixtures.js';
+import RegistrationPage from './homework-08/08-registration.page.js';
 
 
 describe('Chechitas Registration Page', async () => {
