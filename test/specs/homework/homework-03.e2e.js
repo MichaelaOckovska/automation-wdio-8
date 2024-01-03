@@ -2,7 +2,7 @@
  * Lesson 3: Selectors and element interactions
  */
 
-describe('Chechitas Registration Page', async () => {
+describe('Czechitas Registration Page', async () => {
 
         it('should register new user', async () => {
 

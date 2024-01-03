@@ -1,12 +1,12 @@
 /**
- * Lesson 9: Page Object Pattern
+ * Lesson 9: Page Object Pattern – Final homework
  */
 
 import { username, password, registrationName, uniqueUsername, uniqueUsername2 } from '../fixtures.js';
 import RegistrationPage from '../../pageobjects/registration.page.js';
 
 
-describe('Chechitas Registration Page', async () => {
+describe('Czechitas Registration Page', async () => {
 
     before(async () => {
         await RegistrationPage.open();
@@ -37,7 +37,7 @@ describe('Chechitas Registration Page', async () => {
             await RegistrationPage.open();
         });
 
-        it('should fail, because of email is already registered and invalid password', async () => {
+        it('should not register new user, because of email is already registered and invalid password', async () => {
 
             await RegistrationPage.registration(registrationName, '123456', 'stabilo.boss@czechitas.cz');
 
@@ -46,7 +46,7 @@ describe('Chechitas Registration Page', async () => {
 
         });
 
-        it('should fail, because email is already registered', async () => {
+        it('should not register new user, because email is already registered', async () => {
 
             await RegistrationPage.registration(registrationName, password, 'stabilo.boss@czechitas.cz');
 
@@ -55,7 +55,7 @@ describe('Chechitas Registration Page', async () => {
 
         });
 
-        it('should fail, because of invalid password', async () => {
+        it('should not register new user, because of invalid password', async () => {
 
             await RegistrationPage.registration(registrationName, '123456', uniqueUsername2);
 

@@ -3,7 +3,7 @@ import AppPage from './app.page.js';
 class ApplicationsPage extends AppPage {
 
     constructor() {
-        super('/'); 
+        super('/');
     }
 
     get table() { return $('.dataTable'); }
@@ -23,7 +23,16 @@ class ApplicationsPage extends AppPage {
 
     async getTableRows() {
         await this.waitForTableToLoad();
-        return await this.tableRows;
+
+        // let rows = []
+        // for await (const row of this.tableRows) {
+        //     rows.push(new TableRow(row));
+        // }
+        // return rows;
+
+        return this.tableRows.map(async row => {  // Toto je ekvivalent kódu vyššie, využíva funkciu map(), je bezpečnejší
+            return new TableRow(row);
+        });
     }
 
     async setSearchInTable(searchText) {
@@ -31,4 +40,48 @@ class ApplicationsPage extends AppPage {
     }
 }
 
+// NEW INSTANCE !!!
 export default new ApplicationsPage();
+
+/*
+Neporadila som si s tým, opísala som si kód od Moniky a vrátim sa k nemu neskôr, možno po JS kurze, aby som tomu lepšie rozumela
+*/
+
+class TableRow {    // V tejto triede sa pohybujem v kontexte iba jedného riadku!
+    constructor(rowElement) {
+        this._rowElement = rowElement;
+    }
+
+    get infoButton() { return $('[data-can="view"]'); }
+
+    async getValues() {
+
+        const cols = await this._rowElement.$$('td')
+
+        return {
+            name: await cols[0].getText(),
+            date: await cols[1].getText(),
+            paymentType: await cols[2].getText(),
+            toPay: await cols[3].getText(),
+        }
+    }
+
+    async getInfo() {
+        await this.infoButton.click();
+        return new ApplicationInfoPage();
+    }
+}
+
+class ApplicationInfoPage {
+
+    get applicationInfo() { return $('.table-twocols'); }
+
+    async getDetail() {
+
+        return Promise.all(await (this.applicationInfo.$$('tr')).map(async row => {     // Vráti obsah tabuľky v dvojdimenzionálnom poli
+            return Promise.all(await (row.$$('td')).map(async col => {
+                return await col.getText();
+            }));
+        }));
+    }
+}

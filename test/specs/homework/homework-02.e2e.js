@@ -2,7 +2,7 @@
 / * Lesson 2: Selectors
 */
 
-describe('Chechitas Registration Page', async () => {
+describe('Czechitas Registration Page', async () => {
 
     it('should find selectors for registration page', async () => {
 

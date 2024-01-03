@@ -4,7 +4,7 @@
 
 import { username, password, uniqueUsername } from '../fixtures.js';
 
-describe('Chechitas Registration Page', async () => {
+describe('Czechitas Registration Page', async () => {
 
     before(async () => {
 
@@ -37,16 +37,15 @@ describe('Chechitas Registration Page', async () => {
         const passwordConfirmField = await $('#password-confirm');
         const registrationButton = await $('.btn-primary');
 
-        await nameField.setValue('Stabilo Boss2');
-        await emailField.setValue('stabilo.boss2@czechitas.cz');
-        // await emailField.setValue(uniqueUsername);
+        await nameField.setValue('Stabilo Boss');
+        await emailField.setValue(uniqueUsername);
         await passwordField.setValue('Stabilo.Boss123');
         await passwordConfirmField.setValue('Stabilo.Boss123');
 
         await registrationButton.click();
 
         const currentUser = $('.navbar-right').$('.dropdown-toggle');
-        await expect(currentUser).toHaveText('Stabilo Boss2');
+        await expect(currentUser).toHaveText('Stabilo Boss');
 
         await browser.pause(1000);
 
@@ -63,7 +62,7 @@ describe('Chechitas Registration Page', async () => {
 
         });
 
-        it('should fail, because email is already registered', async () => {
+        it('should not register new user, because email is already registered', async () => {
 
             const nameField = await $('#name');
             const emailField = await $('#email');
@@ -88,7 +87,7 @@ describe('Chechitas Registration Page', async () => {
 
         });
 
-        it('should fail, because of invalid password', async () => {
+        it('should not register new user, because of invalid password', async () => {
 
             const nameField = await $('#name');
             const emailField = await $('#email');
