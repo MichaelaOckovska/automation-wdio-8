@@ -60,7 +60,7 @@ describe('Czechitas Registration Page', async () => {
 
         });
 
-        it('should not register new user, because email is already registered', async () => {
+        it('should not register new user because email is already registered', async () => {
 
             const nameField = await $('#name');
             const emailField = await $('#email');
@@ -83,7 +83,7 @@ describe('Czechitas Registration Page', async () => {
 
         });
 
-        it('should not register new user, because of invalid password', async () => {
+        it('should not register new user because of invalid password', async () => {
 
             const nameField = await $('#name');
             const emailField = await $('#email');

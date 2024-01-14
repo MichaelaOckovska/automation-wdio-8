@@ -77,7 +77,7 @@ describe('Czechitas Registration Page', async () => {
 
         });
 
-        it('should not register new user, because of email is already registered and invalid password', async () => {
+        it('should not register new user because of email is already registered and invalid password', async () => {
 
             await registration(registrationName, '123456', 'stabilo.boss@czechitas.cz');
 
@@ -86,7 +86,7 @@ describe('Czechitas Registration Page', async () => {
 
         });
 
-        it('should not register new user, because email is already registered', async () => {
+        it('should not register new user because email is already registered', async () => {
 
             await registration(registrationName, password, 'stabilo.boss@czechitas.cz');
 
@@ -95,7 +95,7 @@ describe('Czechitas Registration Page', async () => {
 
         });
 
-        it('should not register new user, because of invalid password', async () => {
+        it('should not register new user because of invalid password', async () => {
 
             await registration(registrationName, '123456', uniqueUsername2);
 

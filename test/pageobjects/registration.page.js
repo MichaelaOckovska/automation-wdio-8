@@ -1,6 +1,5 @@
 import AppPage from "./app.page.js";
 
-
 class RegistrationPage extends AppPage {
 
     constructor() {
